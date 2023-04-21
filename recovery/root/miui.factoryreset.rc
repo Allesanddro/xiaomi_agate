@@ -39,8 +39,6 @@ on property:vold.miui=factoryreset
     chown system drmrpc /dev/ut_keymaster
     chmod 0660 /dev/ut_keymaster
     # rpmb device
-    chmod 0660 /dev/0:0:0:49476
-    chown system system /dev/0:0:0:49476
     chmod 0660 /dev/rpmb0
     chown system system /dev/rpmb0
     # legacy rpmb device for cross-platform compatibility
@@ -62,6 +60,7 @@ on property:vold.miui=factoryreset
 
     # keymaster etc.
     class_start early_hal
+    start vendor.keymaster-4-0-beanpod
     wait_for_prop hwservicemanager.ready "true"
     exec_start wait_for_keymaster
     mount_all miui.factoryreset.fstab --late

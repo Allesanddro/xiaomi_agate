@@ -19,7 +19,10 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service
 
 PRODUCT_PACKAGES += \
-    bootctrl.mt6893
+    bootctrl.mt6893 \
+    libgptutils \
+    libz \
+    libcutils
 
 #PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 #    bootctrl.mt6893 \
